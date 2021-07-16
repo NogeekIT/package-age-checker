@@ -24,8 +24,6 @@ for name, version in d['dependencies'].items():
     logging.debug('======================================================================')
     logging.debug(f'name: {name}')
     logging.debug(f'asking version: {version}')
-    if version.startswith('git+ssh://git@stash.inside:7999/'):
-        continue
     process = subprocess.run(['npm', 'view', name, '--json', 'time'], stdout=PIPE, stderr=PIPE)
     #    From Python3.7 we can use this instead
     #    process = subprocess.run(['npm', 'view', name, '--json', 'time'], capture_output=True)
